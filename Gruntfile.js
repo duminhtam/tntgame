@@ -19,7 +19,7 @@ module.exports = function (grunt) {
         repositoryUrl: pkg.repository.url,
 
         // This files will not be transfered.
-        ignores: ['.git', 'node_modules'],
+        ignores: ['.git'],
 
         // Number of release to keep (for rollback).
         keepReleases: 3
