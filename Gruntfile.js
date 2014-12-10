@@ -37,4 +37,18 @@ module.exports = function (grunt) {
    */
 
   grunt.loadNpmTasks('grunt-shipit');
+
+  /**
+   * Start project on the remote server.
+  */
+grunt.registerTask('start', function () {
+var done = this.async();
+var current = grunt.config('shipit.options.deployTo') + '/current';
+grunt.shipit.remote('cd ' + current + ' && forever stop --killSignal=SIGTERM bin/www && forever start bin/www', done);
+});
+
+
+ grunt.shipit.on('published', function () {
+    grunt.task.run(['start']);
+  });
 };
