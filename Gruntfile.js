@@ -13,7 +13,7 @@ module.exports = function (grunt) {
         workspace: '/tmp/hello-world-workspace',
 
         // Project will be deployed in this directory.
-        deployTo: '/usr/src/hello-world',
+        deployTo: '/var/Websites/tntnet',
 
         // Repository url.
         repositoryUrl: pkg.repository.url,
