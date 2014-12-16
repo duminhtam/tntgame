@@ -44,7 +44,7 @@ module.exports = function (grunt) {
 grunt.registerTask('start', function () {
 var done = this.async();
 var current = grunt.config('shipit.options.deployTo') + '/current';
-grunt.shipit.remote('cd ' + current + ' && forever stop --killSignal=SIGTERM bin/www && forever start bin/www', done);
+grunt.shipit.remote('cd ' + current + ' && forever start bin/www', done);
 });
 
 
